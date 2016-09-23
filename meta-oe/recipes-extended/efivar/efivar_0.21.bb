@@ -5,7 +5,8 @@ HOMEPAGE = "https://github.com/rhinstaller/efivar"
 LICENSE = "LGPLv2.1"
 LIC_FILES_CHKSUM = "file://COPYING;md5=6626bb1e20189cfa95f2c508ba286393"
 
-DEPENDS_class-target = "popt efivar-native"
+DEPENDS = "popt"
+DEPENDS_append_class-target = " efivar-native"
 
 SRCREV = "aab6c2a64d90b6e5a63661fb5bd6be8d878b0784"
 SRC_URI = "git://github.com/rhinstaller/efivar.git"
