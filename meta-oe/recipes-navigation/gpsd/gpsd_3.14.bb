@@ -68,7 +68,7 @@ do_install() {
 
     export DESTDIR="${D}"
     # prefix is used for RPATH and DESTDIR/prefix for instalation
-    ${STAGING_BINDIR_NATIVE}/scons prefix=${prefix} install ${EXTRA_OESCONS}|| \
+    ${STAGING_BINDIR_NATIVE}/scons prefix=${prefix} libdir=${libdir} install ${EXTRA_OESCONS}|| \
       bbfatal "scons install execution failed."
 }
 
