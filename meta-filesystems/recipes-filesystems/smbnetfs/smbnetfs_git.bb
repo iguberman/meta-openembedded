@@ -21,6 +21,5 @@ SRC_URI = "git://smbnetfs.git.sourceforge.net/gitroot/smbnetfs/smbnetfs;branch=m
            file://Using-PKG_CHECK_MODULES-to-found-headers-and-libraries.patch"
 
 PACKAGECONFIG ??= ""
-PACKAGECONFIG[gnome-keyring] = "--with-gnome-keyring=yes,--with-gnome-keyring=no,libgnome-keyring"
 
 S = "${WORKDIR}/git"

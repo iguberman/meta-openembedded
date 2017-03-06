@@ -69,7 +69,6 @@ PACKAGECONFIG[pulseaudio] = "--enable-pulseaudio,--disable-pulseaudio,pulseaudio
 PACKAGECONFIG[systemd] = "--enable-systemd,--disable-systemd,systemd"
 PACKAGECONFIG[luajit] = "--disable-lua-old,--enable-lua-old,luajit"
 PACKAGECONFIG[lua-old] = "--enable-lua-old,--disable-lua-old,lua"
-PACKAGECONFIG[avahi] = "--enable-avahi,--disable-avahi,avahi"
 # currently we don't provide doxygen-native
 PACKAGECONFIG[doc] = "--enable-doc,--disable-doc,doxygen-native"
 

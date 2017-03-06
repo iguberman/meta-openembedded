@@ -40,8 +40,8 @@ EXTRA_OECONF = "\
     --enable-dfutool \
     --disable-hidd \
     --disable-pand \
-    --disable-dund \
     --disable-cups \
+    --disable-dund \
     --enable-test \
     --enable-datafiles \
     --with-udevdir=`pkg-config --variable=udevdir udev` \

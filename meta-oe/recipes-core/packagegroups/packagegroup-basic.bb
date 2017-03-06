@@ -31,7 +31,6 @@ TASK_BASIC_SSHDAEMON ?= "dropbear openssh-sftp openssh-sftp-server"
 #
 RDEPENDS_${PN} = "\
     ${TASK_BASIC_SSHDAEMON} \
-    avahi-daemon avahi-utils \
 "
 
 #

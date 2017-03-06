@@ -5,13 +5,11 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=442bb3cbbeeb60643a87325718b8a8ee"
 PR = "r1"
 
 SRC_URI = "${SOURCEFORGE_MIRROR}/${BPN}/${BP}.tar.gz \
-           file://setup-add-sleep-after-cups-reset.patch \
            file://fix-libusb-paths.patch \
-           file://cups-1.6.patch \
            file://configure.patch \
 "
 
-DEPENDS += "cups python libusb"
+DEPENDS += "python libusb"
 
 inherit autotools-brokensep python-dir pythonnative pkgconfig
 
@@ -35,11 +33,9 @@ EXTRA_OECONF += "\
         --disable-foomatic-drv-install \
         --enable-foomatic-ppd-install  \
         --enable-foomatic-rip-hplip-install \
-        --with-cupsbackenddir=${libdir}/cups/backend \
-        --with-cupsfilterdir=${libdir}/cups/filter \
 "
 
-PACKAGES += "${PN}-ppd ${PN}-cups ${PN}-backend ${PN}-filter ${PN}-hal"
+PACKAGES += "${PN}-ppd ${PN}-backend ${PN}-filter ${PN}-hal"
 
 RDEPENDS_${PN} += " \
         python-syslog \
@@ -57,15 +53,11 @@ RDEPENDS_${PN}-filter += "perl"
 
 # need to snag the debug file or OE will fail on backend package
 FILES_${PN}-dbg += "\
-        ${libdir}/cups/backend/.debug \
         ${PYTHON_SITEPACKAGES_DIR}/.debug \
-        ${libdir}/cups/filter/.debug "
+        "
 
 FILES_${PN}-dev += "${PYTHON_SITEPACKAGES_DIR}/*.la"
 FILES_${PN}-ppd = "${datadir}/ppd"
-FILES_${PN}-cups = "${datadir}/cups"
-FILES_${PN}-backend = "${libdir}/cups/backend"
-FILES_${PN}-filter = "${libdir}/cups/filter"
 FILES_${PN}-hal = "${datadir}/hal"
 
 FILES_${PN} += "${PYTHON_SITEPACKAGES_DIR}/*.so"
